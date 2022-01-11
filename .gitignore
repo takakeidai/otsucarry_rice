@@ -156,7 +156,8 @@ cython_debug/
 venv/
 try_1.py
 try_2.py
-database_test.py
 __pycache__/
 test.py
-settings.ini
+save.py
+example.md
+word_extension.sql
