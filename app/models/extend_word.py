@@ -185,10 +185,10 @@ def get_all_extended_word():
     all_data.append(result_oyasumi['oyasumi'])
     all_data.append(result_gomenne['gomenne'])
     all_data.append(result_otsukare['otsukare'])
+    
+    json_data = json.dumps(all_data,  indent=2, ensure_ascii=False)
 
-    return all_data
-
-
+    return json_data
     
 # end of line break
         
