@@ -29,18 +29,18 @@ def session_scope():
         session.close()
 
 #v テーブル作成
-class Word_Extension(Base):
+class Word_Extension():
     id = sqlalchemy.Column(sqlalchemy.Integer, primary_key=True, autoincrement=True)
     title = sqlalchemy.Column(sqlalchemy.String(255))
     created_word = sqlalchemy.Column(sqlalchemy.String(255))
 
 # おはようテーブル
-class Ohayo(Word_Extension, Base):
+class Ohayou(Word_Extension, Base):
     __tablename__ = 'Ohayo'
 
 # おやすみ
 class Oyasumi(Word_Extension, Base):
-    __tablesname__ = 'Oyasumi'
+    __tablename__ = 'Oyasumi'
 
 # ごめんね
 class Gomenne(Word_Extension, Base):

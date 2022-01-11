@@ -1,4 +1,5 @@
 from configparser import Error
+import json
 
 from app.models.database import session_scope
 from app.models.search_word import search_word
@@ -7,7 +8,6 @@ from app.models.database import Ohayou
 from app.models.database import Oyasumi
 from app.models.database import Gomenne
 from app.models.database import Otsukare
-import json
 
 def create_extend_word(word):
     
@@ -176,18 +176,20 @@ def get_extended_word_otsukare(callback, word = 'おつかれ'):
 
 
 def get_all_extended_word():
-    all_data = []
-    result_ohayo = get_extended_word_ohayo(create_extend_word)
+    result_ohayou = get_extended_word_ohayo(create_extend_word)
     result_oyasumi = get_extended_word_oyasumi(create_extend_word)
     result_gomenne = get_extended_word_gomenne(create_extend_word)
     result_otsukare = get_extended_word_otsukare(create_extend_word)
-    all_data.append(result_ohayo['ohayou'])
-    all_data.append(result_oyasumi['oyasumi'])
-    all_data.append(result_gomenne['gomenne'])
-    all_data.append(result_otsukare['otsukare'])
-    
-    json_data = json.dumps(all_data,  indent=2, ensure_ascii=False)
+    all_data = dict(
+        ohayou = result_ohayou['ohayou'],
+        oyasumi = result_oyasumi['oyasumi'],
+        gomenne = result_gomenne['gomenne'],
+        otsukare = result_otsukare['otsukare'])
 
+    json_data = json.dumps(all_data, indent=2, ensure_ascii=False)
+    
+    with open('word_extension.json', 'w') as f:
+        json.dump(all_data, f, indent=2, ensure_ascii=False)
     return json_data
     
 # end of line break

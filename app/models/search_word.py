@@ -49,7 +49,7 @@ def search_word(sub_word):
                 midashi = word.find_element_by_css_selector('.cntFdMidashi')
                 title = midashi.get_attribute('title')
                 word_list.append(title)
-            if len(word_list) >= 100:
+            if len(word_list) >= 50:
                 is_break = True
                 break
         next_link = 'https://www.weblio.jp/content_find/prefix/' + str(count) + '/' + sub_word

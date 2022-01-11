@@ -9,4 +9,5 @@ if __name__ == '__main__':
     print(conversion.do('おやすみ'))
     print(conversion.do('ごめんね'))
     print(conversion.do('おつかれ'))
+    
 # end of line break
