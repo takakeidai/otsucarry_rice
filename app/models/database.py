@@ -38,15 +38,15 @@ class Word_Extension():
 class Ohayou(Word_Extension, Base):
     __tablename__ = 'Ohayo'
 
-# おやすみ
+# おやすみテーブル
 class Oyasumi(Word_Extension, Base):
     __tablename__ = 'Oyasumi'
 
-# ごめんね
+# ごめんねテーブル
 class Gomenne(Word_Extension, Base):
     __tablename__ = 'Gomenne'
 
-# おつかれ
+# おつかれテーブル
 class Otsukare(Word_Extension, Base):
     __tablename__ = 'Otsukare'
 
